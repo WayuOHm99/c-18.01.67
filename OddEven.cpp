@@ -1,35 +1,33 @@
-/* LANG: C++ */
-#include <iostream> 
-#include <string.h>
+#include<iostream>
 using namespace std;
-
-int main() {
-
-int num[6], odd [6], even [6]; 
-int i=0,j=0, k=0, rem;
-
-for(i=0;i<=5;i++) 
-cin >> num[i];
-
-for (i=0;i<=5;i++) {
-    rem=num[i]%2;
-    if (rem==0) 
-    even [j++]=num[i]; 
-    else odd [k++]=num[i];
-
-}
-
-cout << "Even ";
-
-for (i=0;i<=j-1;i++)
-
-cout << even[i] << " " ;
-
-cout <<  "\nOdd = ";
-
-for (i=0;i<=k-1;i++) 
-cout << odd[i] << "";
-
-return 0;
-
+int main(){
+	int n=6;
+	int num[n];
+	for(int i=0;i<n;i++){
+		cin >> num[i];
+		if(num[i]<0 || num[i]>100){
+			i--;
+		}
+	}
+	int even[n];
+	int odd[n];
+	int total_even=0;
+	int total_odd=0;
+	
+	for (int i=0;i<n;i++){
+		if(num[i]%2==0){
+			even[total_even++]=num[i];
+		}else{
+			odd[total_odd++]=num[i];
+		}
+	}
+	cout << "Even = ";
+	for(int i=0;i<total_even;i++){
+		cout << even[i] << " ";
+	}
+	
+	 cout << endl << "Odd = ";
+	for(int i=0;i<total_odd;i++){
+		cout << odd[i] << " ";
+	}
 }
